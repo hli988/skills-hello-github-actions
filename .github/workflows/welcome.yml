@@ -1,4 +1,4 @@
-name: Post welcome component
+name: Post welcome comment
 on:
   pull_request:
     types: [opened]
@@ -6,7 +6,7 @@ permissions:
   pull-requests: write
 jobs:
   build:
-    name: Post welcome component
+    name: Post welcome comment
     runs-on: ubuntu-latest
 
 # set workflow to run on pull_request when a PR is opened
