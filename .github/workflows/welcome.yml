@@ -4,6 +4,11 @@ on:
     types: [opened]
 permissions:
   pull-requests: write
+jobs:
+  build:
+    name: Post welcome component
+    runs-on: ubuntu-latest
 
 # set workflow to run on pull_request when a PR is opened
-# pull-requests: write -> permits an action to add a label to a pull request.
+# pull-requests: write -> permits an action to add a label to a pull request
+# set up a job to run on the fastest, and cheapest job runner
