@@ -1,0 +1,24 @@
+name: Post welcome comment
+on:
+  pull_request:
+    types: [opened]
+permissions:
+  pull-requests: write
+jobs:
+  build:
+    name: Post welcome comment
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh pr comment $PR_URL --body "Welcome to the repository!"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+
+# set workflow to run on pull_request when a PR is opened
+# pull-requests: write -> permits an action to add a label to a pull request
+# set up a job to run on the fastest, and cheapest job runner
+# The `run` keyword tells the job to execute a command on the runner.
+#   gh for GitHub CLI
+#   gh pr comment for Add a comment to a GitHub pull request.
+#   --body <text> for The comment body text
+# set up environment variables GITHUB_TOKEN and PR_URL
