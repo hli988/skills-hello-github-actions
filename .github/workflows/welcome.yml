@@ -1,0 +1,9 @@
+name: Post welcome component
+on:
+  pull_request:
+    types: [opened]
+permissions:
+  pull-requests: write
+
+# set workflow to run on pull_request when a PR is opened
+# pull-requests: write -> permits an action to add a label to a pull request.
